@@ -1,29 +1,26 @@
-package co.com.sofka.mentoring35;
-
-import java.util.Date;
+package co.com.sofka.mentoring35.collections;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Random {
-    private Date date;
+
     @Id
     private String id;
-
+    private String date;
     private String orginalList;
-
     private String randomList;
 
     public String getRandomList() {
         return randomList;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -31,10 +28,9 @@ public class Random {
         return id;
     }
 
-    public void setIde(String id) {
+    public void setId(String id) {
         this.id = id;
     }
-
 
     public String getOrginalList() {
         return orginalList;
@@ -48,5 +44,15 @@ public class Random {
         this.randomList = randomList;
     }
 
+
+    @Override
+    public String toString() {
+        return "{" +
+            " date='" + getDate() + "'" +
+            ", id='" + getId() + "'" +
+            ", orginalList='" + getOrginalList() + "'" +
+            ", randomList='" + getRandomList() + "'" +
+            "}";
+    }
     
 }
