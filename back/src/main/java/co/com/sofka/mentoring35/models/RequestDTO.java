@@ -6,18 +6,23 @@ import java.util.Objects;
 public class RequestDTO {
 
     private String id;
+    private String date;
     @NotBlank(message = "La lista no puede estar vacía")
     private String orginalList;
+    private String randomList;
 
     public RequestDTO() {
     }
 
-    public RequestDTO(String id, @NotBlank String orginalList) {
+    public RequestDTO(@NotBlank String id, @NotBlank String date, @NotBlank String orginalList, @NotBlank String randomList) {
         this.id = id;
+        this.date = date;
         this.orginalList = orginalList;
+        this.randomList = randomList;
     }
 
-    public RequestDTO(@NotBlank String orginalList) {
+    public RequestDTO(String id, @NotBlank String orginalList) {
+        this.id = id;
         this.orginalList = orginalList;
     }
 
@@ -29,12 +34,28 @@ public class RequestDTO {
         this.id = id;
     }
 
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
     public String getOrginalList() {
         return orginalList;
     }
 
     public void setOrginalList(String orginalList) {
         this.orginalList = orginalList;
+    }
+
+    public String getRandomList() {
+        return randomList;
+    }
+
+    public void setRandomList(String randomList) {
+        this.randomList = randomList;
     }
 
     @Override

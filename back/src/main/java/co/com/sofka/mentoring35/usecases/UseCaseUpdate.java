@@ -5,6 +5,7 @@ import co.com.sofka.mentoring35.mappers.Mapper;
 import co.com.sofka.mentoring35.models.RequestDTO;
 import co.com.sofka.mentoring35.repositories.RandomRepository;
 import co.com.sofka.mentoring35.usecases.interfaz.SaveRandom;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import reactor.core.publisher.Mono;
@@ -24,6 +25,7 @@ public class UseCaseUpdate implements SaveRandom {
     private final RandomRepository randomRepository;
     private final Mapper mapper;
 
+    @Autowired
     public UseCaseUpdate(RandomRepository randomRepository, Mapper mapper) {
         this.randomRepository = randomRepository;
         this.mapper = mapper;

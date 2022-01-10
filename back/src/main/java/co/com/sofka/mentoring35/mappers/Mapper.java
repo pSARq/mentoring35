@@ -21,7 +21,9 @@ public class Mapper {
     public Function<Random, RequestDTO> mapEntityToRequest(){
         return entity -> new RequestDTO(
                 entity.getId(),
-                entity.getOrginalList()
+                entity.getDate(),
+                entity.getOrginalList(),
+                entity.getRandomList()
         );
     }
 }

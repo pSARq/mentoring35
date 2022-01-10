@@ -29,34 +29,11 @@ public class RandomController {
     }
 
 
-
-    @PutMapping("/update")
-    public Mono<Random> update(@RequestBody RequestDTO request){
-        return Mono.just(new Random()).map(entity -> {
-            entity.setDate(new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime()));
-            entity.setOrginalList(request.getOrginalList());
-            return entity;
-        }).map(entity -> {
-            List<String> list = Stream.of(request.getOrginalList().replaceAll(",", "\n").split("[\n]"))
-                    .map(p -> p.trim())
-                    .collect(Collectors.toList());
-            Collections.shuffle(list);
-            String randomList = list.stream().collect(Collectors.joining("\n"));
-            entity.setRandomList(randomList);
-            return entity;
-        }).flatMap(randomRepository::save);
-    }
-
-
     @GetMapping("/get/{id}")
     public Mono<Random> getById(@PathVariable String id){
         return randomRepository.findById(id);
     }
 
-    @GetMapping("/get")
-    public Flux<Random> get() {
-        return randomRepository.findAll();
-    }
 
     @DeleteMapping("/delete/{id}")
     public Mono<Void> deleteById(@PathVariable String id){
