@@ -5,8 +5,6 @@ x
 Hsrc/main/java/co/com/sofka/mentoring35/usecases/interfaz/SaveRandom.java,2\0\201ae12ef5fa9e688d0e7944210d0536398ddeb8
 n
 >src/main/java/co/com/sofka/mentoring35/collections/Random.java,4\9\4900adb2cbeaff6873eba52ea9a3b24ad319f232
-n
->src/main/java/co/com/sofka/mentoring35/config/MongoConfig.java,7\4\74c1250820f6b3f3f3e42c34f59dc2fd35edf7f8
 y
 Isrc/main/java/co/com/sofka/mentoring35/repositories/RandomRepository.java,a\d\ad126a861664f25989516a3ecdffb1ffa98ca1b8
 m
@@ -33,8 +31,6 @@ v
 Fsrc/test/java/co/com/sofka/mentoring35/usecases/UseCaseGetAllTest.java,7\f\7fe12468ce45072a43101787388978b6011cbead
 v
 Fsrc/test/java/co/com/sofka/mentoring35/usecases/UseCaseDeleteTest.java,2\2\220446958938bda6d2c181946ae10943322dca0a
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 p
 @src/main/java/co/com/sofka/mentoring35/routers/RouterDelete.java,0\6\067b528bbc040317f40dd18fd97633be176d0876
 p
@@ -43,7 +39,3 @@ q
 Asrc/main/java/co/com/sofka/mentoring35/routers/RouterGetById.java,1\9\190bf583215c7ef85aa4c7a545dbbad44542bbc8
 n
 >src/main/java/co/com/sofka/mentoring35/routers/RouterSave.java,d\9\d979ac7ca456b687d1f4675e1300898d7464a95b
-p
-@src/main/java/co/com/sofka/mentoring35/routers/RouterUpdate.java,1\d\1df4cceaa594205703a9f138d310ec0637976189
-r
-Bsrc/main/java/co/com/sofka/mentoring35/Mentoring35Application.java,e\a\ea3f7d429b2e97df234c0eea999c84d65d8b397f
