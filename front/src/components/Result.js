@@ -7,7 +7,6 @@ const Result = ({random, dispatch, idSaved, redirect}) => {
   useEffect( async () => {
     dispatch(getById(idSaved))
     await renderResult()
-    // console.log("random: "+ random.randomList)
   }, [idSaved, redirect])
 
   const renderResult = () => {

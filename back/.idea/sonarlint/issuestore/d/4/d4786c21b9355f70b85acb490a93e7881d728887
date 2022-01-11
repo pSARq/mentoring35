@@ -1,0 +1,5 @@
+
+j
+java:S53616"HReplace this call to "replaceAll()" by a call to the "replace()" method.(ÑÈ†¶üÿÿÿÿ8ô¢³­ä/
+[
+java:S16127"9Replace this lambda with method reference 'String::trim'.(úþ¨¤üÿÿÿÿ8ö¢³­ä/
