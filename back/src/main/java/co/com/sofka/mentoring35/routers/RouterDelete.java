@@ -17,7 +17,7 @@ public class RouterDelete {
 
     @Bean
     public RouterFunction<ServerResponse> delete(UseCaseDelete useCaseDelete){
-        return route(DELETE("/delete/{id}").and(accept(MediaType.APPLICATION_JSON)),
+        return route(DELETE("/random/delete/{id}").and(accept(MediaType.APPLICATION_JSON)),
                 request -> ServerResponse.accepted()
                         .contentType(MediaType.APPLICATION_JSON)
                         .body(BodyInserters.fromPublisher(useCaseDelete.apply(request.pathVariable("id")), Void.class))

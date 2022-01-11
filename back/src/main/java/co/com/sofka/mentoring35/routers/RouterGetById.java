@@ -18,7 +18,7 @@ public class RouterGetById {
 
     @Bean
     public RouterFunction<ServerResponse> getById(UseCaseGetById useCaseGetById){
-        return route(GET("/get/{id}").and(accept(MediaType.APPLICATION_JSON)),
+        return route(GET("/random/get/{id}").and(accept(MediaType.APPLICATION_JSON)),
                 request -> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
                         .body(BodyInserters.fromPublisher(useCaseGetById.apply(
