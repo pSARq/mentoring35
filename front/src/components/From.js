@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux';
-import { fetchRandom } from '../actions';
+import { saveRandom } from '../actions';
 
 const From = (props) => {// component stateless
   const [state, setState] = useState();
   const onSubmit = (e) => {
     e.preventDefault();
-    props.dispatch(fetchRandom(state));
+    props.dispatch(saveRandom(state));
   };
   return <div>
     <form onSubmit={onSubmit}>
