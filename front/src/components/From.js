@@ -1,36 +1,39 @@
-import React, { useState } from 'react'
-import { connect } from 'react-redux';
-import { saveRandom } from '../actions';
+import React from "react";
+import { connect } from "react-redux";
+import { saveRandom } from "../actions";
+import { useForm } from "react-hook-form";
 
-const From = (props) => {// component stateless
-  // const [state, setState] = useState();
-  // const onSubmit = (e) => {
-  //   e.preventDefault();
-  //   props.dispatch(saveRandom(state));
-  // };
-  return <div>
-    {/* <form onSubmit={onSubmit}>
-      <label htmlFor="list">Ingrese una lista separada por comas:</label>
-      <br />
-      <textarea id="list" style={{ width: "300px", height: "120px" }} 
-        onChange={(e) => setState(e.target.value)}
-      ></textarea>
-      <br />
-      <button type="submit" disabled={props.loading}>
-        Enviar
-      </button>
-    </form> */}
-    <h1>Hola</h1>
-  </div>
-}
+const From = ({ loading, dispatch }) => {
+  const { register, handleSubmit } = useForm();
 
-export default From
+  const onSubmit = (data) => {
+    let random = {
+      orginalList: data.contenido
+    }
+    dispatch(saveRandom(random));
+  };
+  return (
+    <div>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <label htmlFor="list">Ingrese una lista separada por comas:</label>
+        <div>
+          <textarea
+            id="list"
+            {...register("contenido", {
+              required: true
+            })}
+          />
+        </div>
+        <button className="btn btn-outline-success" type="submit" disabled={loading}>
+          Enviar
+        </button>
+      </form>
+    </div>
+  );
+};
 
-// const stateMapToPros = state => {
-//   return {
-//     loading: state.view.loading
-//   }
-// }
+const stateMapToPros = (state) => ({
+  loading: state.random.loading,
+})
 
-
-// export default connect(stateMapToPros)(From)
+export default connect(stateMapToPros)(From);

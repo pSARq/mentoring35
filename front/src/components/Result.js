@@ -1,19 +1,42 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { connect } from 'react-redux';
-const Result = (props) => {
+import { getById } from '../actions';
+
+const Result = ({random, dispatch, idSaved, redirect}) => {
   
-  return <div>
-     {/* {props.result && 'Resultado: '+ props.result}  */}
-     <h1>Hola</h1>
-  </div>
+  useEffect( async () => {
+    dispatch(getById(idSaved))
+    await renderResult()
+    // console.log("random: "+ random.randomList)
+  }, [idSaved, redirect])
+
+  const renderResult = () => {
+    if(random){
+      return(
+        <div>
+          <h2>Resultado</h2>
+          {random.randomList}
+        </div>
+      )
+    }
+    return(
+      <div></div>
+    )
+  }
+  
+
+  return (
+    <div className='mt-5'>
+     {renderResult()}
+    </div>
+  )
 }
 
 
-// const stateMapToPros = state => {
-//   return {
-//     result: state.random.result?.randomList
-//   }
-// }
+const stateMapToPros = state => ({
+  random: state.random.random,
+  idSaved: state.random.idSaved,
+  redirect: state.random.redirect
+})
 
-export default Result
-// export default connect(stateMapToPros)(Result)
+export default connect(stateMapToPros)(Result)

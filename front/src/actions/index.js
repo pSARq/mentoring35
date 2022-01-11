@@ -18,20 +18,20 @@ export const failure = () => ({
   type: LOADED_FAILURE,
 });
 
-export const getAll = () => {
+export function getAll(){
   return async (dispatch) => {
     dispatch(loading());
     try {
       const response = await fetch(`${URL_BASE}/get`);
       const data = await response.json();
-      dispatch(success({ randomLists: data, redirect: `/randomLists` }));
+      dispatch(success({ randomLists: data, redirect: `/randomLists`, random: null }));
     } catch (error) {
       dispatch(failure());
     }
   };
 };
 
-export const getById = (idRandomList) => {
+export function getById(idRandomList){
   return async (dispatch) => {
     dispatch(loading());
     try {
@@ -44,7 +44,7 @@ export const getById = (idRandomList) => {
   };
 };
 
-export const saveRandom = (orginalList) => {
+export function saveRandom(orginalList){
   return async (dispatch) => {
     dispatch(loading());
     try {
@@ -57,14 +57,14 @@ export const saveRandom = (orginalList) => {
         body: JSON.stringify(orginalList),
       });
       const id = await response.text();
-      dispatch(success({ redirect: `/${id}` }));
+      dispatch(success({ idSaved: id, redirect: "/" }));
     } catch (error) {
       dispatch(failure());
     }
   };
 }
 
-export const updateRandom = (random) => {
+export function updateRandom(random){
   return async (dispatch) => {
     dispatch(loading());
     try {
@@ -76,24 +76,25 @@ export const updateRandom = (random) => {
         },
         body: JSON.stringify(random),
       });
-      dispatch(success({ redirect: `/randomLists` }));
+      dispatch(success({ redirect: `/randomLists`, random: null }));
     } catch (error) {
       dispatch(failure());
     }
   };
 }
 
-export const deleteRandom = (idRandomList) => {
+export function deleteRandom(idRandomList){
   return async (dispatch) => {
     dispatch(loading());
     try {
       await fetch(`${URL_BASE}/delete/${idRandomList}`, {
         method: "DELETE",
+        mode: "cors",
         headers: {
           "Content-Type": "application/json",
         },
       });
-      dispatch(success({ redirect: `/randomLists` }));
+      dispatch(success({ redirect: `/`, random: null }));
     } catch (error) {
       dispatch(failure());
     }

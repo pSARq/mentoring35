@@ -5,9 +5,8 @@ import Result from "../components/Result";
 const Home = () => {
   return (
     <div>
-      <div>
-        <h3>Lista Random</h3>
-        <p>Sistema Ramdom - Demo</p>
+      <div className="container text-center" >
+        <h2>Lista Random</h2>
         <From />
         <Result />
       </div>

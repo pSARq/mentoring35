@@ -3,12 +3,20 @@ import { getAll, deleteRandom, updateRandom } from "../actions";
 import { connect } from "react-redux";
 import Delete from "../components/Delete";
 import Update from "../components/Update";
+import { useNavigate } from "react-router-dom";
 
 const RandomLists = ({ dispatch, loading, randomLists, hasErrors, redirect }) => {
-  useEffect(() => {
+
+  let navigate = useNavigate()
+
+  useEffect(async () => {
+    if(redirect){
+      await navigate(redirect)
+    }
+
     dispatch(getAll());
-    console.log(randomLists)
-  }, [dispatch, redirect]);
+  }, [dispatch, redirect, navigate]);
+
 
   const onDelete = (id) => {dispatch(deleteRandom(id))}
 
@@ -27,7 +35,7 @@ const RandomLists = ({ dispatch, loading, randomLists, hasErrors, redirect }) =>
       <table className="container table">
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">Id</th>
             <th scope="col">Fecha</th>
             <th scope="col">Lista original</th>
             <th scope="col">Lista aleatoria</th>

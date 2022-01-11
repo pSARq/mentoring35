@@ -1,0 +1,27 @@
+.mi-navbar{
+    
+
+    margin-top: 10px;
+  width: 100%;
+
+  font-weight: 700;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+
+  margin-left: -1.5rem;
+}
+
+nav:hover{
+    background: rgba(204, 204, 204, 0.466);
+}
+
+textarea {
+    width: 40%;
+    height: 100px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+  }

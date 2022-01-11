@@ -12,7 +12,6 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="randomLists" element={<RandomLists />} />
-        <Route path="/:id" element={<Home />}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

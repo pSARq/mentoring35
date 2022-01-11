@@ -6,6 +6,7 @@ import thunk from 'redux-thunk'
 import App from './containers/App'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import rootReducer from "./reducers"
+import "./estilo.css"
 
 const store = createStore(
   rootReducer,

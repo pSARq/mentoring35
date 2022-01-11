@@ -16,7 +16,7 @@ export default function Update({ onUpdate, random }) {
     <Fragment>
       <button
         type="button"
-        className="btn btn-primary mb-4"
+        className="btn btn-outline-primary mb-4"
         data-bs-toggle="modal"
         data-bs-target={idBotonModal}
       >

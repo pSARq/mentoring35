@@ -13,7 +13,7 @@ export default function Delete({onDelete, id}) {
         <Fragment>
         <button
           type="button"
-          className="btn btn-danger"
+          className="btn btn-outline-danger"
           data-bs-toggle="modal"
           data-bs-target={idBotonModal}
         >

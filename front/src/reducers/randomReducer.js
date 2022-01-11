@@ -5,7 +5,8 @@ export const initialState = {
   hasErrors: false,
   randomLists: [],
   random: {},
-  redirect: null
+  redirect: null,
+  idSaved: null
 }
 
 export default function randomReducer(state = initialState, action) {

@@ -14,7 +14,7 @@ public class RequestDTO {
     public RequestDTO() {
     }
 
-    public RequestDTO(@NotBlank String id, @NotBlank String date, @NotBlank String orginalList, @NotBlank String randomList) {
+    public RequestDTO(String id, String date, @NotBlank String orginalList, String randomList) {
         this.id = id;
         this.date = date;
         this.orginalList = orginalList;
