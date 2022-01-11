@@ -33,7 +33,7 @@ const RandomLists = ({ dispatch, loading, randomLists, hasErrors, redirect }) =>
 
     return (
       <table className="container table">
-        <thead>
+        <thead className="table-primary">
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Fecha</th>
@@ -60,7 +60,7 @@ const RandomLists = ({ dispatch, loading, randomLists, hasErrors, redirect }) =>
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Lista de randoms</h1>
       {renderRandomList()}
     </div>

@@ -5,7 +5,7 @@ import Result from "../components/Result";
 const Home = () => {
   return (
     <div>
-      <div className="container text-center" >
+      <div className="container text-center mt-4" >
         <h2>Lista Random</h2>
         <From />
         <Result />

@@ -1,27 +1,32 @@
-.mi-navbar{
-    
-
-    margin-top: 10px;
+nav {
+  background-color: rgba(184, 149, 105, 0.5);
   width: 100%;
-
   font-weight: 700;
-  padding: 0.8rem 1.5rem;
+  padding: 1rem 1.5rem;
   border-radius: 4px;
-
-  margin-left: -1.5rem;
 }
 
-nav:hover{
-    background: rgba(204, 204, 204, 0.466);
+.link{
+    background: rgba(55, 63, 20, 0.363);
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 2%;
+    text-decoration: none;
+}
+
+.link:hover{
+    background-color:  rgba(55, 63, 20, 0.534);
+    color: rgb(216, 216, 216);
 }
 
 textarea {
-    width: 40%;
-    height: 100px;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    resize: none;
-  }
+  width: 40%;
+  height: 100px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}

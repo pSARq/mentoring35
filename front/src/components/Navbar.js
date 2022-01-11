@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="mi-navbar">
-      <Link to="/">Home</Link>
-      <Link to="randomLists">Lista</Link>
+    <nav>
+      <Link className="link" to="/">Home</Link>
+      <Link className="link" to="randomLists">Lista</Link>
     </nav>
   );
 };
