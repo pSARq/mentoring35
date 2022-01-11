@@ -1,6 +1,5 @@
 package co.com.sofka.mentoring35.usecases;
 
-import co.com.sofka.mentoring35.mappers.Mapper;
 import co.com.sofka.mentoring35.repositories.RandomRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,9 +15,8 @@ class UseCaseDeleteTest {
 
     @BeforeEach
     public void setup(){
-        Mapper mapper = new Mapper();
         randomRepository = mock(RandomRepository.class);
-        useCaseDelete = new UseCaseDelete(randomRepository, mapper);
+        useCaseDelete = new UseCaseDelete(randomRepository);
     }
 
     @Test

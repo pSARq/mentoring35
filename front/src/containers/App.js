@@ -1,20 +1,19 @@
-import React, { Component } from 'react'
-import From from '../components/From'
-import Result from '../components/Result'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import Home from "../pages/Home";
+import NotFound from "../pages/NotFound"
 
-class App extends Component {// component stateful
-  render() {
-    return (
-      <div>
-        <h3>Lista Random</h3>
-        <p>Sistema Ramdom - Demo</p>
-        <From />
-        <Result />
-      </div>
-    )
-  }
-}
-
-export default App
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/:id" element={<Home />}/>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
+  );
+};
 
 
+
+export default App;
