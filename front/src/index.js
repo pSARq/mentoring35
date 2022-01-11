@@ -5,16 +5,16 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import App from './containers/App'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import randomReducer from './reducers'
+import rootReducer from "./reducers"
 
 const store = createStore(
-  randomReducer,
+  rootReducer,
   composeWithDevTools(applyMiddleware(thunk))
 )
 
 render(
   <Provider store={store}>
-    <App />
+    <App dispatch={store.dispatch}/>
   </Provider>,
   document.getElementById('root')
 )

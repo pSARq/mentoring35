@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav>
       <Link to="/">Home</Link>
-      <Link to="randomLists">Lists</Link>
+      <Link to="randomLists">Lista</Link>
     </nav>
   );
 };

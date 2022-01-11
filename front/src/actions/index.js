@@ -1,5 +1,5 @@
 // const URL_BASE = 'https://back-aplicacion-empresarial.herokuapp.com';
-const URL_BASE = "https://localhost:8080/random";
+const URL_BASE = "http://localhost:8080/random";
 
 export const LOADING = "LOADING";
 export const LOADED_SUCCESS = "LOADED_SUCCESS";
@@ -24,7 +24,7 @@ export const getAll = () => {
     try {
       const response = await fetch(`${URL_BASE}/get`);
       const data = await response.json();
-      dispatch(success({ randomLists: data, redirect: null }));
+      dispatch(success({ randomLists: data, redirect: `/randomLists` }));
     } catch (error) {
       dispatch(failure());
     }
@@ -37,7 +37,7 @@ export const getById = (idRandomList) => {
     try {
       const response = await fetch(`${URL_BASE}/get/${idRandomList}`);
       const data = await response.json();
-      dispatch(success({ random: data, redirect: null }));
+      dispatch(success({ random: data, redirect: `/randomLists` }));
     } catch (error) {
       dispatch(failure());
     }
@@ -64,7 +64,7 @@ export const saveRandom = (orginalList) => {
   };
 }
 
-export const updateRandom = (question) => {
+export const updateRandom = (random) => {
   return async (dispatch) => {
     dispatch(loading());
     try {
@@ -74,10 +74,9 @@ export const updateRandom = (question) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(question),
+        body: JSON.stringify(random),
       });
-      const id = await response.text();
-      dispatch(success({ redirect: `/${id}` }));
+      dispatch(success({ redirect: `/randomLists` }));
     } catch (error) {
       dispatch(failure());
     }
@@ -90,12 +89,11 @@ export const deleteRandom = (idRandomList) => {
     try {
       await fetch(`${URL_BASE}/delete/${idRandomList}`, {
         method: "DELETE",
-        mode: "cors",
         headers: {
           "Content-Type": "application/json",
         },
       });
-      dispatch(success({ redirect: `/` }));
+      dispatch(success({ redirect: `/randomLists` }));
     } catch (error) {
       dispatch(failure());
     }
