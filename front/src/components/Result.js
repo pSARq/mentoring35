@@ -10,7 +10,7 @@ const Result = ({random, dispatch, idSaved, redirect}) => {
   }, [idSaved, redirect])
 
   const renderResult = () => {
-    if(random){
+    if(random != undefined){
       return(
         <div>
           <h2>Resultado</h2>

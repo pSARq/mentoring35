@@ -44,7 +44,8 @@ const RandomLists = ({ dispatch, loading, randomLists, hasErrors, redirect }) =>
           </tr>
         </thead>
         <tbody>
-          {randomLists.map((random) => (
+          {randomLists.length != 0 ?
+          randomLists.map((random) => (
             <tr key={random.id}>
             <th>{random.id}</th>
             <td>{random.date}</td>
@@ -53,7 +54,8 @@ const RandomLists = ({ dispatch, loading, randomLists, hasErrors, redirect }) =>
             <td><Update onUpdate={onUpdate} random={random}/></td>
             <td><Delete onDelete={onDelete} id={random.id}/></td>
           </tr>
-          ))}
+          )) :
+          <h3>No hay datos</h3>}
         </tbody>
       </table>
     );

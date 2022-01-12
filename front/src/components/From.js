@@ -7,6 +7,7 @@ const From = ({ loading, dispatch }) => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
+    console.log(data)
     let random = {
       orginalList: data.contenido
     }

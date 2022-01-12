@@ -1,7 +1,7 @@
-// const URL_BASE = 'https://back-aplicacion-empresarial.herokuapp.com';
-const URL_BASE = "http://localhost:8080/random";
+const URL_BASE = 'https://back-taller-clase-fullstack.herokuapp.com/random';
 
-export const LOADING = "LOADING";
+
+export const LOADING = "LOADING"
 export const LOADED_SUCCESS = "LOADED_SUCCESS";
 export const LOADED_FAILURE = "LOADED_FAILURE";
 
@@ -24,7 +24,7 @@ export function getAll(){
     try {
       const response = await fetch(`${URL_BASE}/get`);
       const data = await response.json();
-      dispatch(success({ randomLists: data, redirect: `/randomLists`, random: null }));
+      dispatch(success({ randomLists: data, redirect: null, random: null }));
     } catch (error) {
       dispatch(failure());
     }
@@ -37,7 +37,7 @@ export function getById(idRandomList){
     try {
       const response = await fetch(`${URL_BASE}/get/${idRandomList}`);
       const data = await response.json();
-      dispatch(success({ random: data, redirect: `/randomLists` }));
+      dispatch(success({ random: data, redirect: null }));
     } catch (error) {
       dispatch(failure());
     }
@@ -94,7 +94,7 @@ export function deleteRandom(idRandomList){
           "Content-Type": "application/json",
         },
       });
-      dispatch(success({ redirect: `/`, random: null }));
+      dispatch(success({ redirect: `/randomLists`, random: null }));
     } catch (error) {
       dispatch(failure());
     }
